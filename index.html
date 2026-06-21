@@ -1200,6 +1200,79 @@
     line-height: 1.7;
   }
 
+  /* SPEAKERS */
+  .speakers-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .speakers-section h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .speakers-intro {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 640px;
+    line-height: 1.7;
+    margin-top: 0.75rem;
+  }
+
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .speaker-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.25s, border-color 0.25s;
+  }
+
+  .speaker-card:hover {
+    border-color: rgba(26,39,68,0.25);
+    box-shadow: 0 4px 20px rgba(26,39,68,0.08);
+  }
+
+  .speaker-year {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .speaker-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .speaker-role {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .speakers-note {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 1.5rem;
+    font-style: italic;
+  }
+
   /* HAMBURGER BUTTON */
   .nav-hamburger {
     display: none;
@@ -1307,6 +1380,12 @@
     .fee-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .fee-amount-number { font-size: 3rem; }
 
+    /* FAQ */
+    .faq-section { padding: 2.5rem 0; }
+    .faq-heading { font-size: 1.5rem; }
+    .faq-item summary { font-size: 14px; padding: 1rem; }
+    .faq-answer { padding: 0 1rem 1rem; font-size: 14px; }
+
     /* How to enter */
     .enter-section { padding: 2.5rem 0; }
     .enter-grid { grid-template-columns: 1fr; gap: 1.75rem; }
@@ -1344,7 +1423,101 @@
     .launch-card { position: static; padding: 1.5rem; }
     .mission-section { padding: 2.5rem 0; }
     .mission-grid { grid-template-columns: 1fr; }
+    .speakers-section { padding: 2.5rem 0; }
+    .speakers-section h2 { font-size: 1.5rem; }
+    .speakers-grid { grid-template-columns: 1fr; gap: 1rem; }
   }
+
+  /* FAQ */
+  .faq-section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-heading {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 2rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 760px;
+  }
+
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.125rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--navy);
+    transition: background 0.2s;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { background: var(--cream-warm); }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+
+  .faq-icon::before, .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .faq-icon::before { top: 9px; left: 2px; right: 2px; height: 2px; }
+  .faq-icon::after { left: 9px; top: 2px; bottom: 2px; width: 2px; transition: opacity 0.25s ease; }
+  .faq-item[open] .faq-icon::after { opacity: 0; }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  .faq-answer p { margin: 0; }
+  .faq-answer a { color: var(--navy); font-weight: 500; }
+
+  .faq-pay {
+    display: inline-block;
+    margin-top: 0.875rem;
+    background: var(--navy);
+    color: #fff !important;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.5rem 1.4rem;
+    border-radius: 4px;
+    transition: opacity 0.15s;
+  }
+
+  .faq-pay:hover { opacity: 0.75; }
 
   /* AI & PLAGIARISM POLICY */
   .policy-section {
@@ -1516,12 +1689,8 @@
             <span class="info-row-value">Summit conference access</span>
           </div>
           <div class="info-row">
-            <span class="info-row-label">Entry Fee</span>
-            <span class="info-row-value">$25 · <a href="https://events.duke.edu/clsessaycontest" target="_blank" style="color:var(--gold); font-weight:700; text-decoration:underline;">Pay Here</a></span>
-          </div>
-          <div class="info-row">
             <span class="info-row-label">Submission Deadline</span>
-            <span class="info-row-value">September 15, 2026 · <span style="font-size:0.85em; color:var(--text-muted);">Late deadline October 4, 2026 (late fee applies). Submissions by Sept 15 at 11:59 PM EST will be prioritized.</span></span>
+            <span class="info-row-value">September 15, 2026 · <span style="font-size:0.85em; color:var(--text-muted);">Late deadline October 4, 2026 (late fee applies).</span></span>
           </div>
           <div class="eligibility-note">
             <strong>Eligibility note:</strong> High school students may attempt any prompt in either category. High school students who submit to the undergraduate category (Prompts IV-VI) will be considered for recognition in the undergraduate category. Undergraduate students are limited to this category.
@@ -1669,28 +1838,42 @@
   </div>
 </section>
 
-<!-- ENTRY FEE -->
-<section class="fee-section">
-  <div class="container" style="text-align:center;">
-    <span class="section-label">Entry Fee</span>
-    <h2 style="font-family:'EB Garamond',serif; font-size:2rem; font-weight:500; color:var(--navy); margin-bottom:0.5rem;">$25 per Submission</h2>
-    <p style="font-size:15px; color:var(--text-muted); margin-bottom:2rem;">This fee supports student prizes and the ongoing work of Duke-UNC CLS.</p>
-    <a href="https://events.duke.edu/clsessaycontest" target="_blank" style="
-      display:inline-block;
-      background:var(--navy);
-      color:#fff;
-      font-family:'DM Sans',sans-serif;
-      font-size:0.8rem;
-      font-weight:600;
-      letter-spacing:0.05em;
-      text-transform:uppercase;
-      text-decoration:none;
-      padding:0.5rem 1.4rem;
-      border-radius:4px;
-      transition:opacity 0.15s;
-    " onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
-      Pay Here
-    </a>
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <span class="section-label">Questions</span>
+    <h2 class="faq-heading">Frequently Asked</h2>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is there an entry fee?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Yes. There is a $25 fee per submission, which helps fund student prizes and supports the ongoing work of Duke-UNC CLS. Essays submitted after the September 15, 2026 deadline and before the late deadline of October 4, 2026 are accepted with an additional late fee.</p>
+          <a class="faq-pay" href="https://events.duke.edu/clsessaycontest" target="_blank">Pay Here</a>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What do you get if you win?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Winning essays receive recognition at the 2027 CLS Summit and gain access to the undergraduate-only CLS annual conference. Winners also have the option to present their findings to a panel of experts working in U.S.-China affairs.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Who can enter?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>The competition is open to high school and undergraduate students anywhere in the world. There are no residency, citizenship, or geographic restrictions, and all essays must be written in English.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I submit my essay?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Email your essay as a PDF to <a href="mailto:contact@dukeunccls.com">contact@dukeunccls.com</a> before the deadline. Include a cover page with your name, school, and the prompt you selected.</p>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 
@@ -1843,7 +2026,7 @@
 <section class="cta-section">
   <div class="container">
     <h2>Ready to Submit?</h2>
-    <p>Email your essay to <strong>contact@dukeunccls.com</strong> by September 15, 2026 at 11:59 PM EST. A late deadline of October 4, 2026 is available (late fee applies), though submissions received by September 15 will be prioritized. Students from anywhere in the world are welcome.</p>
+    <p>Email your essay to <strong>contact@dukeunccls.com</strong> by September 15, 2026 at 11:59 PM EST. A late deadline of October 4, 2026 is available (late fee applies). Students from anywhere in the world are welcome.</p>
     <button class="btn-secondary" onclick="showPage('page-about')" style="cursor:pointer; margin-left:0;">About CLS</button>
   </div>
 </section>
@@ -1873,7 +2056,7 @@
         </div>
 
         <p>
-          Our past speakers have included decorated diplomats, senior government officials, retired military officers, scientists, professors, journalists, and artists from both China and the United States as well as other parts of the world. They bring a diversity of opinion and perspective that reflects the genuine complexity of this relationship.
+          Past speakers have included diplomats, government officials, military officers, scholars, journalists, and artists from China, the United States, and beyond.
         </p>
 
         <p>
@@ -1922,6 +2105,54 @@
           </button>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="speakers-section">
+    <div class="container">
+      <span class="section-label">Past Speakers</span>
+      <h2>Voices That Have Shaped the Summit</h2>
+      <p class="speakers-intro">A selection of speakers from past summits:</p>
+
+      <div class="speakers-grid">
+        <div class="speaker-card">
+          <span class="speaker-year">2017</span>
+          <span class="speaker-name">Joseph Nye</span>
+          <span class="speaker-role">Harvard professor and originator of the concept of "soft power."</span>
+        </div>
+        <div class="speaker-card">
+          <span class="speaker-year">2024</span>
+          <span class="speaker-name">R. Nicholas Burns</span>
+          <span class="speaker-role">U.S. Ambassador to China and veteran career diplomat.</span>
+        </div>
+        <div class="speaker-card">
+          <span class="speaker-year">2022</span>
+          <span class="speaker-name">Adm. Dennis C. Blair</span>
+          <span class="speaker-role">Former Director of National Intelligence and four-star admiral.</span>
+        </div>
+        <div class="speaker-card">
+          <span class="speaker-year">2017</span>
+          <span class="speaker-name">Thomas Christensen</span>
+          <span class="speaker-role">Former Deputy Assistant Secretary of State and Princeton scholar.</span>
+        </div>
+        <div class="speaker-card">
+          <span class="speaker-year">2014, 2016</span>
+          <span class="speaker-name">David Shambaugh</span>
+          <span class="speaker-role">One of the world's leading scholars of contemporary China.</span>
+        </div>
+        <div class="speaker-card">
+          <span class="speaker-year">2014, 2018</span>
+          <span class="speaker-name">Bonnie Glaser</span>
+          <span class="speaker-role">Leading expert on U.S.-Taiwan relations and Asian security.</span>
+        </div>
+        <div class="speaker-card">
+          <span class="speaker-year">2020</span>
+          <span class="speaker-name">Stephen Orlins</span>
+          <span class="speaker-role">President of the National Committee on U.S.-China Relations.</span>
+        </div>
+      </div>
+
+      <p class="speakers-note">A representative selection of past CLS speakers.</p>
     </div>
   </section>
 
